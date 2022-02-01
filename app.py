@@ -20,7 +20,7 @@ st.write(f"""
 ### Stock Price Changes over the past {days} days
 """)
 
-@st.cache
+@st.cache(suppress_st_warning=True)
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
