@@ -66,7 +66,7 @@ try:
         st.error('choose at least one.')
 
     else: 
-        data = get_data(days, tickers).loc[companies]
+        data = df.loc[companies]
         st.write("### Stock Prices(USD)", data.sort_index())
         data = data.T.reset_index()
         data=pd.melt(data, id_vars=['Date']).rename(
